@@ -1,0 +1,82 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url('https://thumbs-prod.si-cdn.com/EAc1JvK48bstnY-hY05GDaZkPM0=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/77/1e/771e84ff-a6bd-4a10-bc8f-ffd2b4e440f9/110619.jpg') 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url('https://cf-images.us-east-1.prod.boltdns.net/v1/static/5502557046001/f4c26d91-c74e-419b-aac6-57b7907c68bb/81f488bd-1c51-4795-852d-1e19665e7a26/1280x720/match/image.jpg');
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1600&h=838&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F07%2Ffrank-lloyd-wright-wright-legacy-FRANK0619.jpg');
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url('https://preview.redd.it/0nui34i8z7951.jpg?width=640&crop=smart&auto=webp&s=17255c52f4de40846304f16a15d2bab1c2ac92ab');
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url('https://external-preview.redd.it/yTPo5nVep3nJzr8FwQIy1lKsDMsE2Sw9yfPSbNku9f0.jpg?width=640&crop=smart&auto=webp&s=7377af9b96c9f48a15c1dc04f0b9c83b183425fd');
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
