@@ -1,7 +1,7 @@
 const express        = require('express'),
 	  mongoose       = require('mongoose'),
 	  app            = express(),
-	  port           = 3000,
+	  PORT           = process.env.PORT || 3000,
       bodyParser     = require('body-parser'),
       Campground     = require('./models/campground'),
       seedDB         = require('./seeds'),
@@ -62,6 +62,6 @@ app.use(indexRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 app.use('/campgrounds', campgroundRoutes);
 
-app.listen(port, function(){
+app.listen(PORT, ()=> {
 	console.log('Yelp Camp Server Has Started!');		   
 });
