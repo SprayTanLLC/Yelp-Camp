@@ -12,17 +12,23 @@ const express        = require('express'),
 	  methodOverride = require('method-override'),
 	  flash          = require('connect-flash');
 
+
 //Requiring Routes
 const commentRoutes    = require('./routes/comments'),
 	  campgroundRoutes = require('./routes/campgrounds'),
 	  indexRoutes      = require('./routes/index');
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+
+//mongoose.connect('mongodb://localhost/yelp_camp');
+mongoose.connect('mongodb+srv://spraytan:Dasani@29@cluster0.s94rp.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
+  useCreateIndex: true,
   useUnifiedTopology: true
 })
 .then(() => console.log('Connected to DB!'))
-.catch(error => console.log(error.message));
+.catch(error => {
+	console.log('Error', error.message);
+});
 
 app.use(flash());
 
