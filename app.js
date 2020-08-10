@@ -18,8 +18,9 @@ const commentRoutes    = require('./routes/comments'),
 	  campgroundRoutes = require('./routes/campgrounds'),
 	  indexRoutes      = require('./routes/index');
 
+console.log(process.env.DATABASEURL);
 
-//mongoose.connect('mongodb://localhost/yelp_camp');
+//mongoose.connect(process.env.DATABASEURL);
 mongoose.connect('mongodb+srv://spraytan:Dasani@29@cluster0.s94rp.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -29,6 +30,8 @@ mongoose.connect('mongodb+srv://spraytan:Dasani@29@cluster0.s94rp.mongodb.net/<d
 .catch(error => {
 	console.log('Error', error.message);
 });
+
+
 
 app.use(flash());
 
