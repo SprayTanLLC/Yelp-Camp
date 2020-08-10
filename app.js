@@ -22,7 +22,7 @@ const commentRoutes    = require('./routes/comments'),
 console.log(process.env.DATABASEURL);
 
 //mongoose.connect(process.env.DATABASEURL);
-mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect(URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
