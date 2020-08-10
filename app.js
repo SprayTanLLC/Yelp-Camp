@@ -21,7 +21,7 @@ const commentRoutes    = require('./routes/comments'),
 console.log(process.env.DATABASEURL);
 
 //mongoose.connect(process.env.DATABASEURL);
-mongoose.connect('mongodb+srv://spraytan:Dasani@29@cluster0.s94rp.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
