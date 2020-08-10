@@ -10,7 +10,8 @@ const express        = require('express'),
       LocalStrategy  = require('passport-local'),
       User           = require('./models/user'),
 	  methodOverride = require('method-override'),
-	  flash          = require('connect-flash');
+	  flash          = require('connect-flash'),
+	  URL   	     = process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
 
 
 //Requiring Routes
